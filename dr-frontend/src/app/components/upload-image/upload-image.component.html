@@ -1,0 +1,128 @@
+<div class="container">
+
+  <div class="row mt-5">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8  mx-auto">
+      <div class="card text-center shadow">
+        <div class="card-header">
+          Upload Fundus Image
+        </div>
+        <div class="card-body">
+          <input #fileInput type="file" accept="image/*" [(ngModel)]="change" (change)="onFileSelected($event)" style="display: none;">
+          <div id="upload" (click)="fileInput.click()" class="mb-2">
+            <fa-icon id="uploadIcon"[icon]="uploadIcon"></fa-icon>
+          </div>
+          <div>
+            <button class="btn btn-primary"style="width:100%;"(click)="uploadFile()">Upload</button>
+          </div>
+        </div>
+        <div class="card-footer text-body-secondary">
+          <p class="mb-2">{{ selectedFiles == null ? info : selectedFiles[0].name}}</p>
+          <div class="position-relative">
+            <img *ngIf="selectedFiles" [src]="base64Image" style="width: 100%;" alt="Selected File">
+            <fa-icon *ngIf="selectedFiles" (click)="removeFile()" class="position-absolute" id="timesIcon" [icon]="timesIcon"></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- 
+  <div class="position-relative">
+    <img *ngIf="uploadedFile" [src]="base64Image2" style="width: 100%;" alt="Selected File">
+  </div> -->
+  <div *ngIf="status" class="d-flex justify-content-center text-primary mt-3">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="row  mt-2">
+    <div class="col-6 mx-auto">
+      <div *ngIf="message" class="alert alert-warning text-center" role="alert">
+        {{ message }}
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Dr Level 1 Card -->
+  <div class="row mt-5">
+    <div class="col-10 mx-auto">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4 col-lg-3 col-xxl-2 my-auto">
+            <img src="../../../assets/mild_0dc031c94225.png" class="img-fluid rounded-start" alt="Fundus Image">
+          </div>
+          <div class="col-md-8 col-lg-9 col-xxl-10 my-auto">
+            <div class="card-body">
+              <h5 class="card-title">Diabetic Retinopathy Level 1 (Mild)</h5>
+              <p class="card-text" style="text-align: justify">Diabetic retinopathy's mild stage, characterized by microaneurysms in the retina's blood vessels, often has no noticeable symptoms but can lead to blurred vision. Regular eye exams are crucial for early detection and management, which may include controlling blood sugar levels and lifestyle changes. Early intervention is key to preventing vision loss.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dr Level 2 Card -->
+  <div class="row">
+    <div class="col-10 mx-auto">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4 col-lg-3 col-xxl-2 my-auto">
+            <img src="../../../assets/moderate_0c55d58bebaf.png" class="img-fluid rounded-start" alt="Fundus Image">
+          </div>
+          <div class="col-md-8 col-lg-9 col-xxl-10 my-auto">
+            <div class="card-body">
+              <h5 class="card-title">Diabetic Retinopathy Level 2 (Moderate)</h5>
+              <p class="card-text" style="text-align: justify">
+                In the moderate stage of diabetic retinopathy, the disease progresses as the blood vessels in the retina become blocked. This can lead to decreased blood flow and oxygen supply to the retina, causing the growth of new, abnormal blood vessels. These new vessels are fragile and prone to leaking blood and fluid into the retina, leading to vision problems. Regular eye exams and effective management of diabetes are crucial to prevent further progression and vision loss.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dr Level 3 Card -->
+  <div class="row">
+    <div class="col-10 mx-auto">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4 col-lg-3 col-xxl-2 my-auto">
+            <img src="../../../assets/severe_2f42e20db938.png" class="img-fluid rounded-start" alt="Fundus Image">
+          </div>
+          <div class="col-md-8 col-lg-9 col-xxl-10 my-auto">
+            <div class="card-body">
+              <h5 class="card-title">Diabetic Retinopathy Level 3 (Severe)</h5>
+              <p class="card-text" style="text-align: justify">
+                In the severe stage of diabetic retinopathy, the blockage of blood vessels in the retina worsens, leading to a significant reduction in blood flow and oxygen supply. This severe lack of oxygen prompts the retina to grow new, weak blood vessels, which are prone to bleeding and scar tissue formation. Vision loss is more likely at this stage, making regular eye exams and prompt treatment crucial for preserving vision.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dr Level 4 Card -->
+  <div class="row">
+    <div class="col-10 mx-auto">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4 col-lg-3 col-xxl-2 my-auto">
+            <img src="../../../assets/p-dr_1a90fad9ffa2.png" class="img-fluid rounded-start" alt="Fundus Image">
+          </div>
+          <div class="col-md-8 col-lg-9 col-xxl-10 my-auto">
+            <div class="card-body">
+              <h5 class="card-title">Diabetic Retinopathy Level 4 (Proliferative)</h5>
+              <p class="card-text" style="text-align: justify">
+                Proliferative diabetic retinopathy (PDR) is the advanced stage where fragile new blood vessels grow in the retina, leading to bleeding and scar tissue formation. Without prompt treatment, PDR can cause severe vision loss or blindness. Regular eye exams are essential for early detection and management.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

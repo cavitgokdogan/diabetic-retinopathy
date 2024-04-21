@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row mt-5 mb-3">
+        <div class="col-10 mx-auto">
+            <div class="card shadow">
+              <div class="row g-0">
+                <div class="col-md-5 col-lg-6 col-xxl-6 my-auto">
+                  <img [src]="originalImage" class="img-fluid rounded-start" alt="Fundus Image">
+                </div>
+                <div class="col-md-7 col-lg-6 col-xxl-6">
+                  <div class="card-body">
+                    <h5 class="card-title text-center fs-3">Results</h5>
+                    <div [ngClass]="alertClass" class="alert fs-4 fw-bold" role="alert">
+                        {{message}}
+                    </div>
+                    <p class="card-text" style="text-align: justify">
+                        <span class="fw-bold fs-4">Filename: </span> <span class="fs-4">{{filename}}</span> <br>
+
+                        <span *ngIf="detectedType" class="fw-bold fs-4">Detected type: </span> <span class="fs-4">{{detectedType}}</span> <br>
+
+                        <span class="fw-bold fs-4">Binary Score: </span> <span class="fs-4">{{binaryScoreFixed}}</span> <br>
+
+                        <span class="fw-bold fs-4">Response Time: </span> <span class="fs-4">{{responseTime}} seconds</span> <br>
+
+                        <span class="fw-bold fs-4">Inference Time: </span> <span class="fs-4">{{inferenceTime}} seconds</span> <br>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="row mt-5 mb-5 text-center">
+        <div class="col-10 mx-auto">
+            <div class="card shadow4text-center shadow">
+                <div class="card-header">
+                  Preprocessed Fundus Image
+                </div>
+                <div class="card-body">
+                    <img [src]="preprocessedImage" class="img-fluid rounded-start" alt="Fundus Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+#uploadIcon{
+  font-size: 70px;
+  color: rgb(82, 82, 82);
+  opacity: 1;
+  margin: 10px;
+}
+
+
+#upload{
+  border: 1px solid gray;
+  cursor: pointer;
+  transition:  opacity 0.3s;
+}
+
+#upload:hover{
+  opacity: 0.3;
+
+}
+
+#timesIcon{
+  font-size: 20px;
+  background-color: rgb(160, 48, 48);
+  color: white;
+  border-radius: 50%;
+  padding: 0 8px;
+  opacity: 1;
+  transition:  opacity 0.3s;
+  top: 10px;
+  right: 10px;
+}
+
+#timesIcon:hover{
+  cursor: pointer;
+  opacity: 0.5;
+}
